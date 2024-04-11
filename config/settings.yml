@@ -1,0 +1,3 @@
+plugins:
+  localize_text_enabled:
+    default: true
