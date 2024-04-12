@@ -50,17 +50,17 @@ class Localization {
       { en: "Complaints and suggestions regarding the organization of communication, forum rules, AI operation, and mediators", ru: "Жалобы и предложения по организации общения, правилам Форума, работе AI и медиаторов", uk: "Скарги та пропозиції щодо організації спілкування, правил Форуму, роботи AI та медіаторів" },
     ];
 
-    this.localizedFooterBlurb = {
+    this.localizedFooterBlurb = [{
       en: "Creating mutual understanding through AI and human support",
       ru: "Cоздаем взаимопонимание с помощью AI и человеческой поддержки",
       uk: "Створюємо взаєморозуміння за допомогою AI та людської підтримки",
-    }
+    }]
 
-    this.localizedFooterMadeBy = {
+    this.localizedFooterMadeBy = [{
       en: "Made by Reshim.org",
       ru: "Сделано командой Reshim.org",
       uk: "Зроблено командою Reshim.org",
-    }
+    }]
 
     this.localizedFooterLinksBlockTitle = [
       { en: "Resources", ru: "Ресурсы", uk: "Ресурси" },
