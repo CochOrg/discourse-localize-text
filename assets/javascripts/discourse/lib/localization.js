@@ -64,7 +64,7 @@ class Localization {
 
     this.localizedFooterLinksBlockTitle = [
       { en: "Resources", ru: "Ресурсы", uk: "Ресурси" },
-      { en: "For Expert", ru: "Для экспертов", uk: "Для експертів" },
+      { en: "For Experts", ru: "Для экспертов", uk: "Для експертів" },
       { en: "For Mediators", ru: "Для медиаторов", uk: "Для медіаторів" },
     ]
 
