@@ -27,6 +27,7 @@ class Localization {
       { en: "Politics and States", ru: "Политика и государства", uk: "Політика та держави" },
       { en: "Site Feedback", ru: "Обратная связь", uk: "Зворотний зв'язок" },
     ];
+
     this.localizedDescriptions = [
       { en: "All the Most Important Information about the HumanTalk Forum and Communication Rules", ru: "Все самое важное о форуме HumanTalk и правилах общения", uk: "Вся найважливіша інформація про форум HumanTalk та правила спілкування" },
       { en: "Participate in experiments – help create a new path to mutual understanding through AI!", ru: "Поучаствуйте в экспериментах – помогите создать новый путь к взаимопониманию с помощью AI!", uk: "Візьміть участь в експериментах – допоможіть створити новий шлях до взаєморозуміння за допомогою AI!" },
@@ -48,6 +49,32 @@ class Localization {
       { en: "For discussing political ideologies, state governance, and international relations", ru: "Для обсуждения политических идеологий, государственного устройства и международных отношений", uk: "Для обговорення політичних ідеологій, державного устрою та міжнародних відносин" },
       { en: "Complaints and suggestions regarding the organization of communication, forum rules, AI operation, and mediators", ru: "Жалобы и предложения по организации общения, правилам Форума, работе AI и медиаторов", uk: "Скарги та пропозиції щодо організації спілкування, правил Форуму, роботи AI та медіаторів" },
     ];
+
+    this.localizedFooterBlurb = {
+      en: "Creating mutual understanding through AI and human support",
+      ru: "Cоздаем взаимопонимание с помощью AI и человеческой поддержки",
+      uk: "Створюємо взаєморозуміння за допомогою AI та людської підтримки",
+    }
+
+    this.localizedFooterMadeBy = {
+      en: "Made by Reshim.org",
+      ru: "Сделано командой Reshim.org",
+      uk: "Зроблено командою Reshim.org",
+    }
+
+    this.localizedFooterLinksBlockTitle = [
+      { en: "Resources", ru: "Ресурсы", uk: "Ресурси" },
+      { en: "For Expert", ru: "Для экспертов", uk: "Для експертів" },
+      { en: "For Mediators", ru: "Для медиаторов", uk: "Для медіаторів" },
+    ]
+
+    this.localizedFooterLinksTexts = [
+      { en: "Navigation", ru: "Навигация", uk: "Навігація" },
+      { en: "Guidelines", ru: "Правила", uk: "Правила" },
+      { en: "Registration", ru: "Регистрация", uk: "Реєстрація" },
+      { en: "Join the project", ru: "Присоединятейсь к проекту", uk: "Приєднуйтесь до проекту" },
+      { en: "Join the mediation team", ru: "Присоединяйтесь к команде медиаторов", uk: "Приєднуйтесь до команди медіаторів" },
+    ]
   }
 
   // initSidebarObserver() {
@@ -204,6 +231,45 @@ class Localization {
     }
 
     element.setAttribute('title', translation[this.currentLocale]);
+  }
+
+  localizeFooter() {
+    if (!this.acceptedLocales.includes(this.currentLocale)){
+      return;
+    }
+
+    this.localizeFooterBlurb()
+    this.localizeFooterMadeBy()
+    this.localizeFooterLinksBlockTitle()
+    this.localizeFooterLinksTexts()
+  }
+
+  localizeFooterBlurb() {
+    const footerBlurb = document.querySelector('.below-footer-outlet .first-box .blurb')
+    if (footerBlurb){
+      this.changeElementText(footerBlurb, this.localizedFooterBlurb)
+    }
+  }
+
+  localizeFooterMadeBy() {
+    const footerBlurb = document.querySelector('.below-footer-outlet .third-box .small-link')
+    if (footerBlurb){
+      this.changeElementText(footerBlurb, this.localizedFooterMadeBy)
+    }
+  }
+
+  localizeFooterLinksBlockTitle() {
+    const blockTitles = document.querySelectorAll('.below-footer-outlet .second-box .list > span')
+    blockTitles.forEach(title => {
+      this.changeElementText(title, this.localizedFooterLinksBlockTitle)
+    })
+  }
+
+  localizeFooterLinksTexts() {
+    const links = document.querySelectorAll('.below-footer-outlet .second-box .footer-section-link')
+    links.forEach(link => {
+      this.changeElementText(link, this.localizedFooterLinksTexts)
+    })
   }
 }
 

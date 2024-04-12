@@ -19,6 +19,7 @@ export default {
         localization.localizeTopicsCategories();
         localization.localizeShowTopicCategories();
         localization.localizeCategoriesList();
+        localization.localizeFooter();
       });
     });
   }
