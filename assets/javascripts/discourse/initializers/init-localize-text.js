@@ -14,7 +14,6 @@ export default {
         localization.initWidgetObserver();
         localization.initTopicsObserver();
         localization.initFooterObserver();
-
         //
         //
         // localization.localizeSidebarCategories();
