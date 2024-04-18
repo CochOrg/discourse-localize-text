@@ -8,9 +8,6 @@ class Localization {
     this.acceptedLocales = ['ru', 'uk'];
     this.currentLocale = document.querySelector('html')?.lang || 'en';
 
-    console.log(1111, this.currentLocale)
-
-
     this.localizedNames = [
       { en: "General", ru: "Общее", uk: "Загальне" },
       { en: "Experiments", ru: "Эксперименты", uk: "Експерименти" },
@@ -273,7 +270,6 @@ class Localization {
 
   localizeFooterBlurb() {
     const footerBlurb = document.querySelector('.below-footer-outlet .first-box .blurb')
-    console.log(222, footerBlurb)
     if (footerBlurb){
       this.changeElementText(footerBlurb, this.localizedFooterBlurb)
     }
@@ -281,7 +277,6 @@ class Localization {
 
   localizeFooterMadeBy() {
     const footerMadeBy = document.querySelector('.below-footer-outlet .third-box .small-link')
-    console.log(333, footerMadeBy)
     if (footerMadeBy){
       this.changeElementText(footerMadeBy, this.localizedFooterMadeBy)
     }
@@ -289,7 +284,6 @@ class Localization {
 
   localizeFooterLinksBlockTitle() {
     const blockTitles = document.querySelectorAll('.below-footer-outlet .second-box .list > span')
-    console.log(444, blockTitles)
     blockTitles.forEach(title => {
       this.changeElementText(title, this.localizedFooterLinksBlockTitle)
     })
@@ -297,7 +291,6 @@ class Localization {
 
   localizeFooterLinksTexts() {
     const links = document.querySelectorAll('.below-footer-outlet .second-box .footer-section-link')
-    console.log(555, links)
     links.forEach(link => {
       this.changeElementText(link, this.localizedFooterLinksTexts)
     })
