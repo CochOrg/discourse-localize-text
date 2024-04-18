@@ -7,6 +7,8 @@ class Localization {
     this.acceptedLocales = ['ru', 'uk'];
     this.currentLocale = document.querySelector('html')?.lang || 'en';
 
+    console.log(1111, this.currentLocale)
+
     this.localizedNames = [
       { en: "General", ru: "Общее", uk: "Загальне" },
       { en: "Experiments", ru: "Эксперименты", uk: "Експерименти" },
