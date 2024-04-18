@@ -13,6 +13,7 @@ export default {
         // localization.initSidebarObserver();
         localization.initWidgetObserver();
         localization.initTopicsObserver();
+        localization.initFooterObserver();
         //
         //
         // localization.localizeSidebarCategories();

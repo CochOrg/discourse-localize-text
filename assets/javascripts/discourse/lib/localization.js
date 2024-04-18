@@ -4,6 +4,7 @@ class Localization {
     this.sidebarObserver = null;
     this.widgetObserver = null;
     this.topicsObserver = null;
+    this.footerObserver = null;
     this.acceptedLocales = ['ru', 'uk'];
     this.currentLocale = document.querySelector('html')?.lang || 'en';
 
@@ -147,6 +148,28 @@ class Localization {
     }
   }
 
+  initFooterObserver() {
+    if (!this.footerObserver){
+      const targetNode = document.querySelector(".below-footer-outlet");
+      if (!targetNode){
+        return;
+      }
+      const config = { childList: true };
+
+      const callback = (records, observer) => {
+        for (const record of records) {
+          if (record.addedNodes.length !== 0){
+            this.localizeFooter();
+            break;
+          }
+        }
+      };
+
+      this.footerObserver = new MutationObserver(callback);
+      this.footerObserver.observe(targetNode, config);
+    }
+  }
+
   localizeSidebarCategories() {
     if (!this.acceptedLocales.includes(this.currentLocale)){
       return;
@@ -242,13 +265,10 @@ class Localization {
       return;
     }
 
-    setTimeout(() => {
-      this.localizeFooterBlurb()
-      this.localizeFooterMadeBy()
-      this.localizeFooterLinksBlockTitle()
-      this.localizeFooterLinksTexts()
-    }, 100)
-
+    this.localizeFooterBlurb()
+    this.localizeFooterMadeBy()
+    this.localizeFooterLinksBlockTitle()
+    this.localizeFooterLinksTexts()
   }
 
   localizeFooterBlurb() {
