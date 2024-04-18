@@ -242,10 +242,13 @@ class Localization {
       return;
     }
 
-    this.localizeFooterBlurb()
-    this.localizeFooterMadeBy()
-    this.localizeFooterLinksBlockTitle()
-    this.localizeFooterLinksTexts()
+    setTimeout(() => {
+      this.localizeFooterBlurb()
+      this.localizeFooterMadeBy()
+      this.localizeFooterLinksBlockTitle()
+      this.localizeFooterLinksTexts()
+    }, 100)
+
   }
 
   localizeFooterBlurb() {
