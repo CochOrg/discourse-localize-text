@@ -9,6 +9,7 @@ class Localization {
 
     console.log(1111, this.currentLocale)
 
+
     this.localizedNames = [
       { en: "General", ru: "Общее", uk: "Загальне" },
       { en: "Experiments", ru: "Эксперименты", uk: "Експерименти" },
