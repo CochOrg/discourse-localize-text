@@ -77,6 +77,11 @@ class Localization {
       { en: "Join the project", ru: "Присоединятейсь к проекту", uk: "Приєднуйтесь до проекту" },
       { en: "Join the mediation team", ru: "Присоединяйтесь к команде медиаторов", uk: "Приєднуйтесь до команди медіаторів" },
     ]
+
+    this.localizedHeaderLinksTexts = [
+      { en: "About", ru: "О Форуме", uk: "Про Форум" },
+      { en: "Guidelines", ru: "Правила", uk: "Правила" },
+    ]
   }
 
   // initSidebarObserver() {
@@ -266,6 +271,7 @@ class Localization {
     this.localizeFooterMadeBy()
     this.localizeFooterLinksBlockTitle()
     this.localizeFooterLinksTexts()
+    this.localizeHeaderLinksTexts()
   }
 
   localizeFooterBlurb() {
@@ -293,6 +299,13 @@ class Localization {
     const links = document.querySelectorAll('.below-footer-outlet .second-box .footer-section-link')
     links.forEach(link => {
       this.changeElementText(link, this.localizedFooterLinksTexts)
+    })
+  }
+
+  localizeHeaderLinksTexts() {
+    const links = document.querySelectorAll('.d-header li.headerLink a')
+    links.forEach(link => {
+      this.changeElementText(link, this.localizedHeaderLinksTexts)
     })
   }
 }
